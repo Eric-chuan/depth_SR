@@ -12,6 +12,8 @@ set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 FIND_PACKAGE(OpenCV REQUIRED HINTS "$ENV{HOME}/lib/opencv3_4_11/share/OpenCV")
 
+add_subdirectory(cuda)
+set (EXTRA_LIBS ${EXTRA_LIBS} depthSR_gpu)
 add_executable(depthSR ${SOURCES})
 
 TARGET_LINK_LIBRARIES(depthSR dl)

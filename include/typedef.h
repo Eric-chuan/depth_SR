@@ -29,4 +29,16 @@ typedef struct SobelFilter
                          -1,-2,-1};
 }SobelFilter;
 
+typedef struct ContextDepthSR
+{
+    int width;
+    int height;
+    int scale_w;
+    int scale_h;
+
+}ContextDepthSR;
+
+#define THREADS_PER_BLOCK 20
+#define ThreadsPerBlock 32
+
 #endif
